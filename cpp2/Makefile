@@ -3,7 +3,7 @@ WCC := i686-w64-mingw32-g++
 LCC := clang++
 
 # Common flags
-FLAGS := -Wall -static
+FLAGS := -Wall -static -Iinclude
 
 # Source files
 SROUCE_DIR := src
