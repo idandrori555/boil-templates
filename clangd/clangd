@@ -1,0 +1,12 @@
+CompileFlags:
+  # Add the target triple for Windows 64-bit
+  Add: [
+    "--target=x86_64-w64-windows-gnu",
+    "-std=c++20",
+    "-Wall",
+    # Tell clang where to find your cross-compiler's system headers
+    # Replace the path below with your actual MinGW installation path
+    "-isystem", "/usr/x86_64-w64-mingw32/include",
+    "-isystem", "/usr/lib/gcc/x86_64-w64-mingw32/10-win32/include/c++",
+    "-isystem", "/usr/lib/gcc/x86_64-w64-mingw32/10-win32/include/c++/x86_64-w64-mingw32"
+  ]
