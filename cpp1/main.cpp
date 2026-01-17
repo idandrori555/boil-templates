@@ -1,7 +1,8 @@
 #include <iostream>
+#include <print>
 
 int main(void)
 {
-  std::cout << "Hello World!" << std::endl;
+  std::println("Hello, World!");
   return 0;
 }
