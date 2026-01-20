@@ -1,0 +1,15 @@
+CompileFlags:
+  Add: [
+    "-Wall",              # Enable common warnings
+    "-Wextra",            # Enable even more warnings
+    "-Wpedantic",         # Ensure you follow the C++ standard strictly
+    "-Wshadow",           # Warn if a variable hides another variable
+    "-std=c++23",         # Use the latest C++ features
+    "-fstandalone-debug", # Improves debug info for some editors
+  ]
+
+Index:
+  Background: Build      # Index your code in the background for fast "Go to Definition"
+
+Diagnostics:
+  UnusedIncludes: Strict  # Tell you if you have #include lines you don't need
