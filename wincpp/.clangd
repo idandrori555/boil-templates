@@ -3,6 +3,6 @@ CompileFlags:
     "--target=x86_64-w64-windows-gnu",
     "-std=c++23",
     "-Wall",
-    "-isystem", "/usr/x86_64-w64-mingw32/include",
+    "-isystem", "/usr/x86_64-w64-mingw32/include/c++/15.2.0/",
   ]
 
