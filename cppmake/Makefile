@@ -3,7 +3,7 @@ WCC := i686-w64-mingw32-g++
 LCC := clang++
 
 # Common flags
-FLAGS := -Wall -static
+FLAGS := -Wall -static -std=c++23
 
 # Source files
 SOURCES := $(wildcard *.cpp)
@@ -17,7 +17,7 @@ OUT_LINUX := $(BUILD_DIR)/$(OUT)
 OUT_WINDOWS := $(BUILD_DIR)/$(OUT)
 
 # Default target
-all: linux windows
+all: linux run
 
 # Ensure build directory exists
 $(BUILD_DIR):
@@ -32,6 +32,9 @@ linux: $(BUILD_DIR)
 windows: $(BUILD_DIR)
 	$(WCC) $(FLAGS) $(SOURCES) -o $(OUT_WINDOWS)
 	@echo "✅ Compiled for Windows -> $(OUT_WINDOWS)"
+
+run: $(OUT_LINUX)
+	./$(OUT_LINUX)
 
 # Clean up
 clean:
