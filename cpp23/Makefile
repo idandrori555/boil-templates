@@ -3,7 +3,7 @@ WCC := i686-w64-mingw32-g++
 LCC := clang++
 
 # Common flags
-FLAGS := -Wall -static -std=c++23
+FLAGS := -Wall -std=c++23
 
 # Source files
 SOURCES := $(wildcard *.cpp)
@@ -28,11 +28,6 @@ linux: $(BUILD_DIR)
 	$(LCC) $(FLAGS) $(SOURCES) -o $(OUT_LINUX)
 	@echo "✅ Compiled for Linux -> $(OUT_LINUX)"
 
-# Build Windows version
-windows: $(BUILD_DIR)
-	$(WCC) $(FLAGS) $(SOURCES) -o $(OUT_WINDOWS)
-	@echo "✅ Compiled for Windows -> $(OUT_WINDOWS)"
-
 run: $(OUT_LINUX)
 	./$(OUT_LINUX)
 
@@ -40,4 +35,4 @@ run: $(OUT_LINUX)
 clean:
 	rm -rf $(BUILD_DIR)
 
-.PHONY: windows linux clean all
+.PHONY: linux clean all
